@@ -1,0 +1,123 @@
+{
+  "$anchor": "lottieInteractivity-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_supportedLayout": {
+          "type": "string",
+          "title": "Supported layout",
+          "default": "both",
+          "enum": ["full-width", "half-width", "both"],
+          "_adapt": {
+            "editorOnly": true
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "_setCompletionOn": {
+          "type": "string",
+          "title": "Completion criteria",
+          "default": "inview",
+          "enum": ["inview", "complete"],
+          "_backboneForms": "Select"
+        },
+        "_lottie": {
+          "type": "object",
+          "title": "Lottie",
+          "default": {},
+          "required": ["src"],
+          "properties": {
+            "src": {
+              "type": "string",
+              "isObjectId": true,
+              "title": "Lottie source (*.json)",
+              "_backboneForms": {
+                "type": "Asset",
+                "media": "other"
+              }
+            },
+            "controls": {
+              "type": "boolean",
+              "title": "Has controls",
+              "description": "Show or hide the Lottie player controls",
+              "default": false
+            },
+            "loops": {
+              "type": "number",
+              "title": "Number of animation loops",
+              "description": "Use 0 for play once, 1 for play twice",
+              "default": -1
+            },
+            "autoplay": {
+              "type": "boolean",
+              "title": "Is autoplay",
+              "description": "When set to true, automatically plays the animation on loading it.",
+              "default": false
+            },
+            "speed": {
+              "type": "number",
+              "title": "Animation Speed",
+              "description": "Set this parameter to any positive number. Default: 1",
+              "default": 1
+            },
+            "renderer": {
+              "type": "string",
+              "title": "Lottie renderer",
+              "description": "Should be `svg` when using vector based animation and `canvas` if animation is comprised of just images",
+              "default": "svg",
+              "enum": ["svg", "canvas", "html"],
+              "_backboneForms": "Select"
+            },
+            "style": {
+              "type": "string",
+              "title": "Style",
+              "description": "",
+              "default": ""
+            },
+            "preserveAspectRatio": {
+              "type": "string",
+              "title": "Preserve aspect ratio",
+              "description": "Valid value to preserve the aspect ratio",
+              "default": "xMidYMid meet"
+            },
+            "background": {
+              "type": "string",
+              "title": "Background",
+              "description": "Background color. By default, the background is transparent and will take the color of the parent container.",
+              "default": ""
+            },
+            "interactivity": {
+              "type": "object",
+              "title": "Interactivity options",
+              "description": "Add Lottie interactivity",
+              "default": {},
+              "_backboneForms": {
+                "type": "CodeEditor",
+                "mode": "json"
+              }
+            }
+          }
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

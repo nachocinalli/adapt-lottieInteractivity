@@ -1,0 +1,159 @@
+{
+	"type": "object",
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"id": "http://jsonschema.net",
+	"$ref": "http://localhost/plugins/content/component/model.schema",
+	"globals": {
+		"ariaRegion": {
+			"type": "string",
+			"required": true,
+			"default": "",
+			"inputType": "Text",
+			"validators": [],
+			"translatable": true
+		}
+	},
+	"properties": {
+		"_supportedLayout": {
+			"type": "string",
+			"required": true,
+			"enum": ["full-width", "half-width", "both"],
+			"default": "both",
+			"editorOnly": true
+		},
+		"instruction": {
+			"type": "string",
+			"required": false,
+			"default": "",
+			"inputType": "Text",
+			"validators": [],
+			"help": "This is the instruction text",
+			"translatable": true
+		},
+		"_setCompletionOn": {
+			"type": "string",
+			"required": true,
+			"enum": ["inview", "complete"],
+			"default": "inview",
+			"title": "Set completion on",
+			"inputType": {
+				"type": "Select",
+				"options": ["inview", "complete"]
+			},
+			"validators": ["required"],
+			"help": "Whether completion is based on the learner having viewed all the animation - or just having viewed the component"
+		},
+		"_lottie": {
+			"type": "object",
+			"required": false,
+			"title": "Lottie",
+			"properties": {
+				"src": {
+					"type": "string",
+					"required": true,
+					"default": "",
+					"title": "Lottie source (*.json)",
+					"inputType": "Asset:other",
+					"validators": ["required"],
+					"help": "JSON file exported using the bodymovin plugin. NOTICE: Can only use single file JSON. Animations with folders will not work."
+				},
+				"controls": {
+					"type": "boolean",
+					"required": true,
+					"default": true,
+					"title": "Show controls?",
+					"inputType": "Checkbox",
+					"validators": [],
+					"help": "Show or hide the Lottie player controls."
+				},
+				"loop": {
+					"type": "number",
+					"required": true,
+					"default": -1,
+					"title": "Number of animation loops",
+					"inputType": "Number",
+					"validators": ["required", "number"],
+					"help": "Use 0 for play once, 1 for play twice..."
+				},
+				"autoplay": {
+					"type": "boolean",
+					"required": true,
+					"default": false,
+					"title": "Autoplay animation?",
+					"inputType": "Checkbox",
+					"validators": [],
+					"help": "When set to true, automatically plays the animation on loading it."
+				},
+				"speed": {
+					"type": "number",
+					"required": true,
+					"default": 1,
+					"title": "Animation speed",
+					"inputType": "Number",
+					"validators": ["required", "number"],
+					"help": "Set this parameter to any positive number. Default: 1."
+				},
+				"renderer": {
+					"type": "string",
+					"required": false,
+					"default": "svg",
+					"title": "Lottie renderer",
+					"enum": ["svg", "canvas", "html"],
+					"inputType": {
+						"type": "Select",
+						"options": ["svg", "canvas", "html"]
+					},
+					"validators": [],
+					"help": "Should be `svg` when using vector based animation and `canvas` if animation is comprised of just images."
+				},
+				"style": {
+					"type": "string",
+					"required": false,
+					"default": "",
+					"title": "Style",
+					"validators": [],
+					"inputType": "Text",
+					"help": ""
+				},
+				"preserveAspectRatio": {
+					"type": "string",
+					"required": false,
+					"default": "xMidYMid meet",
+					"title": "Preserve the aspect ratio",
+					"validators": [],
+					"inputType": "Text",
+					"help": "Valid value to preserve the aspect ratio"
+				},
+				"background": {
+					"type": "string",
+					"required": false,
+					"default": "",
+					"title": "Background",
+					"validators": [],
+					"inputType": "Text",
+					"help": "Background color. By default, the background is transparent and will take the color of the parent container."
+				},
+				"interactivity": {
+					"type": "object",
+					"default": {},
+					"title": "Interactivity",
+					"inputType": {
+						"type": "CodeEditor",
+						"mode": "json"
+					},
+					"validators": [],
+					"help": "Add Lottie interactivity"
+				}
+			}
+		},
+		"description": {
+			"type": "string",
+			"required": false,
+			"default": "",
+			"inputType": "TextArea",
+			"validators": [],
+			"help": "This is the description text",
+			"translatable": true
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "lottieInteractivity",
+  "_classes": "",
+  "_layout": "left",
+  "title": "Lottie interactivity",
+  "displayTitle": "Lottie interactivity",
+  "body": "This is the body of the component",
+  "instruction": "",
+  "_setCompletionOn": "inview",
+  "_lottie": {
+    "src": "https://assets1.lottiefiles.com/packages/lf20_dmlbtg4m.json",
+    "controls": true,
+    "loop": -1,
+    "autoplay": false,
+    "speed": 1,
+    "style": "",
+    "renderer": "svg",
+    "preserveAspectRatio": "xMidYMid meet",
+    "background": "",
+    "failed": "Error loading animation",
+    "interactivity": {
+      "mode": "scroll",
+      "actions": [
+        {
+          "visibility": [0, 1],
+          "type": "seek",
+          "frames": [0, 60]
+        }
+      ]
+    }
+  },
+  "description": "",
+  "_pageLevelProgress": {
+    "_isEnabled": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "adapt-lottieInteractivity",
+  "version": "1.0.0",
+  "framework": ">=5.14.0",
+  "homepage": "https://github.com/nachocinalli/adapt-lottieInteractivity",
+  "bugs": "https://github.com/nachocinalli/adapt-lottieInteractivity/issues",
+  "component": "lottieInteractivity",
+  "targetAttribute": "_lottieInteractivity",
+  "displayName": "Lottie interactivity",
+  "description": "Add scrolling and cursor interactivity to lottie animations.",
+  "main": "/js/adapt-lottieInteractivity.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}
